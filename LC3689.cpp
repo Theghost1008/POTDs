@@ -23,7 +23,19 @@ using namespace std;
 //     }
 // };
 
-
+/* Thinking - 
+At the first i thought of using sliding window for subarrays but it didnt make sense
+so i dropped the idea. Then the problem statement said - "max(nums[l..r])-min(nums[l..r])";
+that clicked the thinking of using "maxi" and "mini" variables to track maximum and minimum
+values in a subarray. I initialized maxi = nums[0] and mini = nums[0] (first element of
+the array), then i iterated the array index by index comparing current element with "maxi"
+and "mini" and repalcing them with each successfull comapring(if "nums[i]" {current elemt}
+ is found greater than "maxi" then replace "maxi" with "nums[i]" and do the similar for
+ "mini". Then store the "value" - "maxi"-"mini" to be pushed in a "ans" vector that contains
+ the "value" of the subarrays already sorted in ascending order. The as said we can repeat
+ a subarray to we chose the maximum element from the "ans" array and then multiply it by
+ "k" to get the final answer)
+*/
 //Actual Solution
 class Solution {
 public:
